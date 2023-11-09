@@ -35,6 +35,8 @@ test ('Rules main menu', async ({page}) =>{
     const slideZone = page.locator('.HowToPlayScreen__SwiperSlide_State_Active--QnG30')
 
     const box = await slideZone.boundingBox()
+    const x = box!.x + box!.width / 2
+    const y = box!.y + box!.height / 2
     await page.mouse.move (300, 300)
     await page.mouse.down()
     await page.mouse.move(-1000, 0)

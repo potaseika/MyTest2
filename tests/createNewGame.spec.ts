@@ -29,14 +29,14 @@ test ('Click on all buttons from nav bar', async ({page}) =>{
     await page.locator('[href="#/"]').click()
 })
 
-// test ('Rules main menu', async ({page}) =>{
-//     await page.locator ('.InitialScreen__GameRulesLink--KVux4').click()
+test ('Rules main menu', async ({page}) =>{
+    await page.locator ('.InitialScreen__GameRulesLink--KVux4').click()
 
-//     const slideZone = page.locator('.HowToPlayScreen__SwiperSlide_State_Active--QnG30')
+    const slideZone = page.locator('.HowToPlayScreen__SwiperSlide_State_Active--QnG30')
 
-//     const box = await slideZone.boundingBox()
-//     await page.mouse.move (300, 300)
-//     await page.mouse.down()
-//     await page.mouse.move(-1000, 0)
-//     await page.mouse.up ()
-// })
+    const box = await slideZone.boundingBox()
+    await page.mouse.move (300, 300)
+    await page.mouse.down()
+    await page.mouse.move(-1000, 0)
+    await page.mouse.up ()
+})

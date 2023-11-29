@@ -31,15 +31,7 @@ test ('Click on all buttons from nav bar', async ({page}) =>{
 
 test ('Rules main menu', async ({page}) =>{
     await page.locator ('.InitialScreen__GameRulesLink--KVux4').click()
-    const swiperSlide = page.locator ('.swiper-wrapper')
-
-    const box = await swiperSlide.boundingBox()
-    const x = box!.x + box!.width / 2
-    const y = box!.y + box!.height / 2
-        await page.mouse.move (x+300, y+300)
-        await page.mouse.down()
-        await page.mouse.move(x-1000, y+300)
-        await page.mouse.up ()
-    
+    const swiperSlide2 = page.locator ('[class="swiper-pagination-bullet"]').nth(1)
+    swiperSlide2.click()
     
 })

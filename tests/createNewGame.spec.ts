@@ -29,9 +29,14 @@ test ('Click on all buttons from nav bar', async ({page}) =>{
     await page.locator('[href="#/"]').click()
 })
 
-test ('Rules main menu', async ({page}) =>{
-    await page.locator ('.InitialScreen__GameRulesLink--KVux4').click()
-    const swiperSlide2 = page.locator ('[class="swiper-pagination-bullet"]').nth(1)
-    swiperSlide2.click()
-    
-})
+test("Rules main menu", async ({ page }) => {
+    await page.locator(".InitialScreen__GameRulesLink--KVux4").click();
+  
+    const bullets = page.locator('[class="swiper-pagination-bullet"]');
+    const count = await bullets.count();
+  
+    for (let i = 0; i < count; i++) {
+      await bullets.nth(i).click();
+      await page.waitForTimeout(2000);
+    }
+  });
